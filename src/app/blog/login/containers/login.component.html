@@ -1,0 +1,18 @@
+<div *ngIf='tempOutlet=="attempt"'>
+    <app-login-form 
+        [status]='status' 
+        (loginAttemptEmitter)='handleLoginAttemptEmitter($event)' 
+        (forgotPasswordEmitter)='handleForgotPasswordEmitter($event)'>
+    </app-login-form>
+</div>
+
+<div *ngIf='tempOutlet=="forgotpass" && forgotpassStatus!=statusSuccess'>
+    <app-forgot-password-form 
+        [forgotpassStatus] = 'forgotpassStatus'
+        (infoEmitter) = 'handleForgotPassword($event)'>
+    </app-forgot-password-form>
+</div>
+
+<div *ngIf='forgotpassStatus==statusSuccess'>
+    {{userpass}}
+</div>

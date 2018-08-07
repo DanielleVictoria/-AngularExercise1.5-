@@ -1,0 +1,12 @@
+export enum LOGIN_STATUS {
+    LOGIN_NULL,
+    LOGIN_WRONG_USERNAME,
+    LOGIN_WRONG_PASSWORD,
+    LOGIN_SUCCESS,
+}
+
+export enum FORGOTPASS_STATUS {
+    NULL,
+    INVALID,
+    SUCCESS
+}

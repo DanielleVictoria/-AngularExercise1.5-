@@ -1,0 +1,131 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "type" : "BLOGGER",
+      "username": "mandeuk",
+      "firstname": "Jennie",
+      "middlename": "Ruby",
+      "lastname": "Kim",
+      "email": "jenniekim@samplemail.com",
+      "birthdate": "01/16/1996",
+      "password": "chichu",
+      "mobilenum": "09059796155"
+    },
+    {
+      "id": 2,
+      "type" : "BLOGGER",
+      "username": "chichu",
+      "firstname": "Jisoo",
+      "middlename": "Chikin",
+      "lastname": "Kim",
+      "email": "jisookim@samplemail.com",
+      "birthdate": "01/03/1996",
+      "password": "mandeuk",
+      "mobilenum": "09059796155"
+    },
+    {
+      "id": 3,
+      "type" : "BLOGGER",
+      "username": "baechu",
+      "firstname": "Irene",
+      "middlename": "Joohyun",
+      "lastname": "Bae",
+      "email": "irenebae@samplemail.com",
+      "birthdate": "03/29/1991",
+      "password": "ddeulgi",
+      "mobilenum": "09059796155"
+    },
+    {
+      "id": 4,
+      "type" : "BLOGGER",
+      "username": "ddeulgi",
+      "firstname": "Seulgi",
+      "middlename": "Seul",
+      "lastname": "Kang",
+      "email": "seulgikang@samplemail.com",
+      "birthdate": "03/29/1991",
+      "password": "baechu",
+      "mobilenum": "09059796155"
+    },
+    {
+      "id": 5,
+      "type" : "APPROVER",
+      "username": "nielle",
+      "firstname": "Danielle",
+      "middlename": "Quinto",
+      "lastname": "Victoria",
+      "email": "daniellevictoria@samplemail.com",
+      "birthdate": "05/15/1998",
+      "password": "blackvelvetslay",
+      "mobilenum": "09059796155"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "status" : "APPROVED",
+      "title": "Irene outsold",
+      "author": "mandeuk",
+      "category": "FLUFF",
+      "date": "08/01/2018",
+      "body": "What do I say? Do you ever wonder how fallen angels look like? And I have a working theory, that maybe, just maybe, Bae Irene is not human at all",
+      "draft": false
+    },
+    {
+      "id": 4,
+      "status" : "APPROVED",
+      "title": "Seulgi is the best daddy of them all",
+      "subtitle": "and im not even kidding",
+      "author": "chichu",
+      "category": "FLUFF",
+      "date": "08/01/2018",
+      "body": "Ugh. Such power she holds. I don't even know how i managed to bring myself together. She's so powerful. A woman is crying and that woman is me. Ugh, her mind.",
+      "draft": false
+    },
+    {
+      "id": 5,
+      "status" : "APPROVED",
+      "title": "YG can choke",
+      "subtitle": "",
+      "author": "mandeuk",
+      "category": "RANT",
+      "date": "08/02/2018",
+      "body": "YG can choke. He doesn't value his artists. He doesn't promote them that much. He's wasting TALENT. The nerve of that guy!",
+      "draft": false
+    },
+    {
+      "id": 6,
+      "status" : "APPROVED",
+      "title": "i love walking",
+      "subtitle": "",
+      "author": "nielle",
+      "category": "NEUTRAL",
+      "date": "08/02/2018",
+      "body": "I walked to work today. And wow. I inhaled so much smoke. SO MUCH SMOKE. We all gonna die early. I'm planting the seed.",
+      "draft": false
+    },
+    {
+      "id": 7,
+      "status" : "APPROVED",
+      "title": "Is water wet?",
+      "subtitle": "",
+      "author": "ddeulgi",
+      "category": "THOUGHTS",
+      "date": "08/02/2018",
+      "body": "If water is like air for fishes... then is water wet for them? How do they know what's wet or not? Does being in the air the equivalent of us drowning in water? Fishes... i wonder",
+      "draft": false
+    },
+    {
+      "id": 8,
+      "status" : "PENDING",
+      "title": "A snake",
+      "subtitle": "",
+      "author": "ddeulgi",
+      "category": "RANT",
+      "date": "08/02/2018",
+      "body": "@mandeuk stop your ass from snaking my girlfriend challenge : failed. \n\n@baechu stop entertainng Jennie Kim because you already have a girlfriend challenge : failed\n\n@chichi stop being whipped for me im not your daddy challenge : failed",
+      "draft": false
+    }
+  ]
+}
