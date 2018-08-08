@@ -1,0 +1,20 @@
+<!--  BOTH BLOGGER AND APPROVER  -->
+
+
+<!--  BLOGGER ONLY -->
+<div *ngIf='user.type == "BLOGGER"'>
+    <a [routerLink]="[ {outlets: { 'sub-outlet-2' : ['show','approvedall'] } } ]" routerLinkActive="active">Approved Blogs</a> |
+    <a [routerLink]="[ {outlets: { 'sub-outlet-2' : ['show','approveduser'] } } ]" routerLinkActive="active">My Approved Blogs</a> |
+    <a [routerLink]="[ {outlets: { 'sub-outlet-2' : ['show','pendinguser'] } } ]" routerLinkActive="active">My Pending Blogs</a> |
+    <a [routerLink]="[ {outlets: { 'sub-outlet-2' : ['show','returneduser'] } } ]" routerLinkActive="active">My Returned Blogs</a> |
+    <a [routerLink]="[ {outlets: { 'sub-outlet-2' : ['show','draftsuser'] } } ]" routerLinkActive="active">My Drafts</a> |
+</div>
+
+<!--  APPROVER ONLY -->
+<div *ngIf='user.type == "APPROVER"'>
+
+</div>
+
+
+<br>
+<router-outlet name="sub-outlet-2"></router-outlet>

@@ -1,0 +1,31 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h1 class="panel-title">
+            <b>{{post.title}} </b>
+        </h1>
+        {{post?.subtitle}}
+    </div>
+
+    <div class="panel-body">
+        {{post.body}}
+        <br>
+        <br> Category : {{post.category}}
+        <br> Date Posted : {{post.date}}
+    </div>
+
+    <div class="panel-footer">
+        <div class="text-left">
+            <!--LINK-->{{post.author}}
+        </div>
+
+        <div class="text-right" *ngIf='isCurrentUser && (post.status == "RETURNED" || post.draft)'>
+            <button (click)='handleEditPost()'>
+                <span class="glyphicon glyphicon-pencil icon"></span>
+            </button>
+            <button (click)='handleDeletePost()'>
+                <span class="glyphicon glyphicon-remove icon"></span>
+            </button>
+        </div>
+
+    </div>
+</div>

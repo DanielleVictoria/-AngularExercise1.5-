@@ -1,42 +1,33 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { DashboardComponent } from './containers/dashboard.component';
-
-//testing
-import { ForgotPasswordFormComponent } from 'src/app/blog/login/dumbcomponents/forgot-password-form.component';
-import { LoginComponent } from 'src/app/blog/login/containers/login.component';
-import { SampleComponent } from './containers/sample.component';
-import { AppComponent } from 'src/app/blog/dashboard/containers/app.component';
+import { NavbarComponent } from 'src/app/blog/dashboard/dumbcomponents/dashboard/navbar.component';
 
 const routes: Routes = [
-  /*
-  { path: "dashboard", component: DashboardComponent, children : [
-    {path : "profile", component : ForgotPasswordFormComponent, outlet : "test"}
-  ] },
-  */
 
-  { path: "dashboard", component: DashboardComponent},
-  {path : "sample", component : SampleComponent, outlet : "test"},
-  {path : "app", component : AppComponent, outlet : "test"}
 ];
 
 @NgModule({
   imports: [
+    //angular
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule,
+    FormsModule,
+
   ],
   declarations: [
     //smart
     DashboardComponent,
 
-    //testing
-    SampleComponent,
-    AppComponent
+    //dumb
+    NavbarComponent,
   ],
   exports: [
-    DashboardComponent
+    DashboardComponent,
+    RouterModule
   ]
 })
 export class DashboardModule { }

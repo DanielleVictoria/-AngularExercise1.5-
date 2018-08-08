@@ -1,0 +1,14 @@
+<app-filters (filterEmitter) = 'handleFilterEmitter ($event)'></app-filters>
+
+<div class="col-md-10" >
+    {{postsToShow?.length}} posts retrieved
+    <div *ngFor = 'let post of postsToShow'>
+      <app-post-pane 
+        [post]='post' 
+        [isCurrentUser]= 'isCurrentUser(post.author)' 
+        (deleteEmitter)= 'deletePost($event)'
+        (editEmitter) = 'editPost($event)'
+      >
+      </app-post-pane>
+    </div>
+  </div>

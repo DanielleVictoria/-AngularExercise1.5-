@@ -10,3 +10,8 @@ export enum FORGOTPASS_STATUS {
     INVALID,
     SUCCESS
 }
+
+export enum FORM_TYPE {
+    EDIT,
+    ADD
+}

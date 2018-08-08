@@ -1,0 +1,39 @@
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <div class="navbar-brand">
+        BLGGER//
+      </div>
+    </div>
+
+    <div class="collapse navbar-collapse">
+
+      <ul class="nav navbar-nav">
+
+        <li>
+          <a [routerLink]="[ {outlets: { 'sub-outlet-1' : ['posts'] } } ]">Posts</a>
+        </li>
+
+        <li>
+          <a [routerLink]="[ {outlets: { 'sub-outlet-1' : ['profile'] } } ]">Profile</a>
+        </li>
+
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="#">Logout</a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<!--nav>
+  <a [routerLink]="[ {outlets: { 'sub-outlet-1' : ['posts'] } } ]" routerLinkActive="active">Posts</a>
+  <a [routerLink]="[ {outlets: { 'sub-outlet-1' : ['profile'] } } ]" routerLinkActive="active">Profile</a>
+</nav-->

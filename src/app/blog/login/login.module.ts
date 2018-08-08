@@ -9,8 +9,7 @@ import { LoginFormComponent } from './dumbcomponents/login-form.component';
 import { ForgotPasswordFormComponent } from './dumbcomponents/forgot-password-form.component';
 
 const routes: Routes = [
-  {path : '', redirectTo : '/login/attempt', pathMatch : 'full'},
-  {path : 'login/:type', component : LoginComponent},
+
 ];
 
 @NgModule({
@@ -28,7 +27,8 @@ const routes: Routes = [
     ForgotPasswordFormComponent
   ],
   exports : [
-    LoginComponent
+    LoginComponent,
+    RouterModule
   ] 
 })
 export class LoginModule { }

@@ -19,8 +19,8 @@ export class LoginComponent implements OnInit {
   status: LOGIN_STATUS;
 
   // For Forgot Password
-  forgotpassStatus : FORGOTPASS_STATUS = FORGOTPASS_STATUS.NULL;
-  statusSuccess : FORGOTPASS_STATUS = FORGOTPASS_STATUS.SUCCESS;
+  forgotpassStatus: FORGOTPASS_STATUS = FORGOTPASS_STATUS.NULL;
+  statusSuccess: FORGOTPASS_STATUS = FORGOTPASS_STATUS.SUCCESS;
 
   constructor(
     private blogservice: BlogService,
@@ -29,9 +29,12 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    if (this.blogservice.testing) {
+      this.router.navigate(['/dashboard']);
+    }
     this.tempOutlet = this.route.snapshot.paramMap.get('type');
-    console.log(this.tempOutlet);
     this.status = LOGIN_STATUS.LOGIN_NULL;
+
   }
 
   //region Login Handles
@@ -57,9 +60,9 @@ export class LoginComponent implements OnInit {
   //endregion
 
   //region ForgotPassword
-  userpass : string;
-  handleForgotPassword({username,email,mobile}) {
-    console.log ({username,email,mobile});
+  userpass: string;
+  handleForgotPassword({ username, email, mobile }) {
+    console.log({ username, email, mobile });
     for (let user of this.blogservice.users) {
       if (username === user.username && email === user.email && mobile === user.mobilenum) {
         this.forgotpassStatus = FORGOTPASS_STATUS.SUCCESS;

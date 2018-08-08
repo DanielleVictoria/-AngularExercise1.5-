@@ -15,6 +15,8 @@ import { Post } from 'src/app/models/Post';
 @Injectable()
 export class BlogService {
 
+  testing: boolean = true;
+
   // shared datas
   currentUser: User;
   users: User[];
@@ -27,10 +29,13 @@ export class BlogService {
   constructor(private httpclient: HttpClient) {
     // Check if httpclient is ok
     console.log("HTTP CLIENT : " + httpclient);
-
-    this.getUsers().subscribe(users => this.users = users);
+    this.getUsers().subscribe(users => {
+      this.users = users;
+      if (this.testing) {
+        this.currentUser = this.users[0];
+      }
+    });
     this.getPosts().subscribe(posts => this.posts = posts);
-
   }
 
   //---------------------------USERS-------------------------------------//

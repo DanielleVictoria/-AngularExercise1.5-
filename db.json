@@ -2,7 +2,7 @@
   "users": [
     {
       "id": 1,
-      "type" : "BLOGGER",
+      "type": "BLOGGER",
       "username": "mandeuk",
       "firstname": "Jennie",
       "middlename": "Ruby",
@@ -14,7 +14,7 @@
     },
     {
       "id": 2,
-      "type" : "BLOGGER",
+      "type": "BLOGGER",
       "username": "chichu",
       "firstname": "Jisoo",
       "middlename": "Chikin",
@@ -26,7 +26,7 @@
     },
     {
       "id": 3,
-      "type" : "BLOGGER",
+      "type": "BLOGGER",
       "username": "baechu",
       "firstname": "Irene",
       "middlename": "Joohyun",
@@ -38,7 +38,7 @@
     },
     {
       "id": 4,
-      "type" : "BLOGGER",
+      "type": "BLOGGER",
       "username": "ddeulgi",
       "firstname": "Seulgi",
       "middlename": "Seul",
@@ -50,7 +50,7 @@
     },
     {
       "id": 5,
-      "type" : "APPROVER",
+      "type": "APPROVER",
       "username": "nielle",
       "firstname": "Danielle",
       "middlename": "Quinto",
@@ -64,7 +64,7 @@
   "posts": [
     {
       "id": 1,
-      "status" : "APPROVED",
+      "status": "RETURNED",
       "title": "Irene outsold",
       "author": "mandeuk",
       "category": "FLUFF",
@@ -74,7 +74,7 @@
     },
     {
       "id": 4,
-      "status" : "APPROVED",
+      "status": "APPROVED",
       "title": "Seulgi is the best daddy of them all",
       "subtitle": "and im not even kidding",
       "author": "chichu",
@@ -85,18 +85,17 @@
     },
     {
       "id": 5,
-      "status" : "APPROVED",
+      "status": "PENDING",
       "title": "YG can choke",
-      "subtitle": "",
       "author": "mandeuk",
-      "category": "RANT",
-      "date": "08/02/2018",
+      "category": "FLUFF",
+      "date": "08/08/2018",
       "body": "YG can choke. He doesn't value his artists. He doesn't promote them that much. He's wasting TALENT. The nerve of that guy!",
-      "draft": false
+      "draft": true
     },
     {
       "id": 6,
-      "status" : "APPROVED",
+      "status": "APPROVED",
       "title": "i love walking",
       "subtitle": "",
       "author": "nielle",
@@ -107,7 +106,7 @@
     },
     {
       "id": 7,
-      "status" : "APPROVED",
+      "status": "APPROVED",
       "title": "Is water wet?",
       "subtitle": "",
       "author": "ddeulgi",
@@ -118,7 +117,7 @@
     },
     {
       "id": 8,
-      "status" : "PENDING",
+      "status": "PENDING",
       "title": "A snake",
       "subtitle": "",
       "author": "ddeulgi",

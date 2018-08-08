@@ -1,0 +1,6 @@
+<app-post-form 
+  [type]='typeEDIT' 
+  [postToEdit]='post' 
+  (resultEmitter)='handleResult($event)' 
+  (deleteEmitter)='deletePost($event)'
+></app-post-form>

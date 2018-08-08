@@ -1,0 +1,63 @@
+<div class="col-md-2 well well-sm">
+  <form class="form-horizontal col-md-11" (ngSubmit)="handleFilter(date.value)" #loginForm="ngForm">
+
+    <div class="form-group">
+      <label>Filter : </label>
+    </div>
+
+    <!-- DATE PICKER -->
+    <link rel="stylesheet" href="https://unpkg.com/ngx-bootstrap/datepicker/bs-datepicker.css">
+
+    <div class="form-group">
+      <label>Date Posted : </label>
+
+      <div>
+        <input type="text" name="date" class="form-control" #date bsDatepicker [bsValue]="bsValue" placement="right" [bsConfig]="{ dateInputFormat: 'MM/DD/YYYY' }">
+      </div>
+    </div>
+
+    <!-- TEXT BOX -->
+    <div class="form-group">
+      <label>Author : </label>
+
+      <div>
+        <input type="text" name="author" #author = 'ngModel' [(ngModel)] = 'myModel.author' class="form-control" placeholder="Author">
+      </div>
+    </div>
+
+    <!-- SELECT -->
+    <div class="form-group">
+      <label>Category : </label>
+
+      <div>
+        <select class="form-control" name="category" #category = 'ngModel' [(ngModel)] = 'myModel.category'>
+          <option></option>
+          <option>FLUFF</option>
+          <option>RANT</option>
+          <option>NEUTRAL</option>
+          <option>THOUGHTS</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- SELECT -->
+    <div class="form-group">
+      <label>Sort by Title : </label>
+
+      <div>
+        <select class="form-control" name="sort" #sort = 'ngModel' [(ngModel)] = 'myModel.sort'>
+          <option></option>
+          <option>Ascending</option>
+          <option>Descending</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- SUBMIT BUTTON -->
+    <div class="form-group">
+      <div>
+        <button type="submit" class="btn btn-default">Filter</button>
+      </div>
+    </div>
+  </form>
+</div>
