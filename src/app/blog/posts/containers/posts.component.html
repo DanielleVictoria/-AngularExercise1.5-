@@ -2,19 +2,35 @@
 
 
 <!--  BLOGGER ONLY -->
-<div *ngIf='user.type == "BLOGGER"'>
-    <a [routerLink]="[ {outlets: { 'sub-outlet-2' : ['show','approvedall'] } } ]" routerLinkActive="active">Approved Blogs</a> |
-    <a [routerLink]="[ {outlets: { 'sub-outlet-2' : ['show','approveduser'] } } ]" routerLinkActive="active">My Approved Blogs</a> |
-    <a [routerLink]="[ {outlets: { 'sub-outlet-2' : ['show','pendinguser'] } } ]" routerLinkActive="active">My Pending Blogs</a> |
-    <a [routerLink]="[ {outlets: { 'sub-outlet-2' : ['show','returneduser'] } } ]" routerLinkActive="active">My Returned Blogs</a> |
-    <a [routerLink]="[ {outlets: { 'sub-outlet-2' : ['show','draftsuser'] } } ]" routerLinkActive="active">My Drafts</a> |
-</div>
+<ul class="nav nav-pills" *ngIf='user?.type == "BLOGGER"'>
+    <li role="presentation">
+        <a [routerLink]="[ {outlets: { 'sub-outlet-2' : ['show','approvedall'] } } ]" routerLinkActive="active">Approved Blogs</a>
+    </li>
+    <li role="presentation">
+        <a [routerLink]="[ {outlets: { 'sub-outlet-2' : ['show','approveduser'] } } ]" routerLinkActive="active">My Approved Blogs</a>
+    </li>
+    <li role="presentation">
+        <a [routerLink]="[ {outlets: { 'sub-outlet-2' : ['show','pendinguser'] } } ]" routerLinkActive="active">My Pending Blogs</a>
+    </li>
+    <li role="presentation">
+        <a [routerLink]="[ {outlets: { 'sub-outlet-2' : ['show','returneduser'] } } ]" routerLinkActive="active">My Returned Blogs</a>
+    </li>
+    <li role="presentation">
+        <a [routerLink]="[ {outlets: { 'sub-outlet-2' : ['show','draftsuser'] } } ]" routerLinkActive="active">My Drafts</a>
+    </li>
+    <li role="presentation">
+        <a [routerLink]="[ {outlets: { 'sub-outlet-2' : ['add'] } } ]" routerLinkActive="active">Add a Post</a>
+    </li>
+</ul>
 
 <!--  APPROVER ONLY -->
-<div *ngIf='user.type == "APPROVER"'>
-
-</div>
-
-
+<ul class="nav nav-pills" *ngIf='user?.type == "APPROVER"'>
+    <li role="presentation">
+        <a [routerLink]="[ {outlets: { 'sub-outlet-2' : ['show','approvedall'] } } ]" routerLinkActive="active">Approved Blogs</a>
+    </li>
+    <li role="presentation">
+        <a [routerLink]="[ {outlets: { 'sub-outlet-2' : ['show','pendingall'] } } ]" routerLinkActive="active">Pending Blogs</a>
+    </li>
+</ul>
 <br>
 <router-outlet name="sub-outlet-2"></router-outlet>

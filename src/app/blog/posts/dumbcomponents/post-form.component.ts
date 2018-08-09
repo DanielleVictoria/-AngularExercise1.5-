@@ -26,8 +26,8 @@ export class PostFormComponent implements OnInit {
   typeADD = FORM_TYPE.ADD;
 
   myModel = {
-    'category': '',
-    'publish': '',
+    'category': 'FLUFF',
+    'publish': 'DRAFT',
     'title': '',
     'body': '',
     'subtitle': '',

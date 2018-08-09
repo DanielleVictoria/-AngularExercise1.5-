@@ -1,18 +1,47 @@
-<div *ngIf='tempOutlet=="attempt"'>
-    <app-login-form 
-        [status]='status' 
-        (loginAttemptEmitter)='handleLoginAttemptEmitter($event)' 
-        (forgotPasswordEmitter)='handleForgotPasswordEmitter($event)'>
-    </app-login-form>
-</div>
+<div class="container">
+    <div class="jumbotron">
+        <h1>Welcome to BLGGER//</h1>
+        <p>Random innovative stuff</p>
+    </div>
 
-<div *ngIf='tempOutlet=="forgotpass" && forgotpassStatus!=statusSuccess'>
-    <app-forgot-password-form 
-        [forgotpassStatus] = 'forgotpassStatus'
-        (infoEmitter) = 'handleForgotPassword($event)'>
-    </app-forgot-password-form>
-</div>
+    <!--
+        <carousel>
+            <slide>
+                <img src="https://ak.picdn.net/assets/cms/ca5ee4698bfec5581262f766580fd909768471b8-shutterstock_245037463%20(1)-min.jpg"
+                    alt="first slide" style="display: block; width: 100%;">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>Welcome to BLGGER//</h1>
+                    <p>Where you can be yourself</p>
+                </div>
+            </slide>
+            <slide>
+                <img src="https://thumbs.gfycat.com/UnimportantThisChicken-mobile.jpg" alt="second slide" style="display: block; width: 100%;">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3>Random stuff</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </slide>
+            <slide>
+                <img src="https://static.asiachan.com/Kang.Seul-gi.full.33835.jpg" alt="third slide" style="display: block; width: 100%;">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3>Random stuff</h3>
+                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                </div>
+            </slide>
+        </carousel>
+    -->
 
-<div *ngIf='forgotpassStatus==statusSuccess'>
-    {{userpass}}
+    <div *ngIf='tempOutlet=="attempt"'>
+        <app-login-form [status]='status' (loginAttemptEmitter)='handleLoginAttemptEmitter($event)' (forgotPasswordEmitter)='handleForgotPasswordEmitter($event)'>
+        </app-login-form>
+    </div>
+
+    <div *ngIf='tempOutlet=="forgotpass" && forgotpassStatus!=statusSuccess'>
+        <app-forgot-password-form [forgotpassStatus]='forgotpassStatus' (infoEmitter)='handleForgotPassword($event)'>
+        </app-forgot-password-form>
+    </div>
+
+    <div *ngIf='forgotpassStatus==statusSuccess'>
+        {{userpass}}
+    </div>
 </div>

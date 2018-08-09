@@ -1,14 +1,28 @@
-<app-filters (filterEmitter) = 'handleFilterEmitter ($event)'></app-filters>
+<app-filters (filterEmitter)='handleFilterEmitter ($event)'></app-filters>
 
-<div class="col-md-10" >
-    {{postsToShow?.length}} posts retrieved
-    <div *ngFor = 'let post of postsToShow'>
-      <app-post-pane 
-        [post]='post' 
-        [isCurrentUser]= 'isCurrentUser(post.author)' 
-        (deleteEmitter)= 'deletePost($event)'
-        (editEmitter) = 'editPost($event)'
-      >
-      </app-post-pane>
+<div class="col-md-10">
+  {{postsToShow?.length}} posts retrieved
+  <div *ngFor='let post of postsToShow'>
+
+    <!-- check if the user is the current user, a blogger, and the post is either returned or a draft -->
+    <div *ngIf='isCurrentUser(post.author) && (post.status != "PENDING") && !isApprover'>
+      <button class="btn btn-default" (click)='editPost(post.id)'>
+        <span class="glyphicon glyphicon-pencil icon"></span> Edit
+      </button>
+      <button class="btn btn-default" (click)='deletePost(post.id)'>
+        <span class="glyphicon glyphicon-remove icon"></span> Delete
+      </button>
     </div>
+
+    <!-- check if the user is an approver, and the post is pending -->
+    <div *ngIf='isApprover && (post.status == "PENDING")'>
+      <button class="btn btn-default" (click)='viewPost(post.id)'>
+        <span class="glyphicon glyphicon-search"></span> View
+      </button>
+    </div>
+
+    <app-post-pane [post]='post'>
+    </app-post-pane>
+
   </div>
+</div>

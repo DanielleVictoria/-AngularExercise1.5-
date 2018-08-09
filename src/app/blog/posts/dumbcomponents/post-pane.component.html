@@ -18,13 +18,8 @@
             <!--LINK-->{{post.author}}
         </div>
 
-        <div class="text-right" *ngIf='isCurrentUser && (post.status == "RETURNED" || post.draft)'>
-            <button (click)='handleEditPost()'>
-                <span class="glyphicon glyphicon-pencil icon"></span>
-            </button>
-            <button (click)='handleDeletePost()'>
-                <span class="glyphicon glyphicon-remove icon"></span>
-            </button>
+        <div class="text-right">
+            
         </div>
 
     </div>

@@ -64,7 +64,7 @@
   "posts": [
     {
       "id": 1,
-      "status": "RETURNED",
+      "status": "APPROVED",
       "title": "Irene outsold",
       "author": "mandeuk",
       "category": "FLUFF",
@@ -73,57 +73,79 @@
       "draft": false
     },
     {
-      "id": 4,
+      "id": 2,
       "status": "APPROVED",
       "title": "Seulgi is the best daddy of them all",
       "subtitle": "and im not even kidding",
       "author": "chichu",
       "category": "FLUFF",
-      "date": "08/01/2018",
+      "date": "08/02/2018",
       "body": "Ugh. Such power she holds. I don't even know how i managed to bring myself together. She's so powerful. A woman is crying and that woman is me. Ugh, her mind.",
       "draft": false
     },
     {
-      "id": 5,
-      "status": "PENDING",
+      "id": 3,
+      "status": "APPROVED",
       "title": "YG can choke",
       "author": "mandeuk",
-      "category": "FLUFF",
-      "date": "08/08/2018",
+      "category": "RANT",
+      "date": "08/03/2018",
       "body": "YG can choke. He doesn't value his artists. He doesn't promote them that much. He's wasting TALENT. The nerve of that guy!",
-      "draft": true
-    },
-    {
-      "id": 6,
-      "status": "APPROVED",
-      "title": "i love walking",
-      "subtitle": "",
-      "author": "nielle",
-      "category": "NEUTRAL",
-      "date": "08/02/2018",
-      "body": "I walked to work today. And wow. I inhaled so much smoke. SO MUCH SMOKE. We all gonna die early. I'm planting the seed.",
       "draft": false
     },
     {
-      "id": 7,
+      "id": 4,
       "status": "APPROVED",
       "title": "Is water wet?",
       "subtitle": "",
       "author": "ddeulgi",
       "category": "THOUGHTS",
-      "date": "08/02/2018",
+      "date": "08/04/2018",
       "body": "If water is like air for fishes... then is water wet for them? How do they know what's wet or not? Does being in the air the equivalent of us drowning in water? Fishes... i wonder",
+      "draft": false
+    },
+    {
+      "id": 5,
+      "status": "APPROVED",
+      "title": "A snake",
+      "subtitle": "",
+      "author": "ddeulgi",
+      "category": "RANT",
+      "date": "08/05/2018",
+      "body": "@mandeuk stop your ass from snaking my girlfriend challenge : failed. \n\n@baechu stop entertainng Jennie Kim because you already have a girlfriend challenge : failed\n\n@chichi stop being whipped for me im not your daddy challenge : failed",
+      "draft": false
+    },
+    {
+      "id": 6,
+      "status": "DRAFT",
+      "title": "Lavender",
+      "subtitle": "",
+      "author": "baechu",
+      "category": "NEUTRAL",
+      "date": "08/09/2018",
+      "body": "Lavender, an herb with many culinary uses, also makes a stunning addition to borders and perennial gardens, providing sweeping drifts of color from early summer into fall. With its silvery-green foliage, upright flower spikes and compact shrub-like form, lavender is ideal for creating informal hedges. You can also harvest it for fragrant floral arrangements, sachets, and potpourri.",
+      "draft": true
+    },
+    {
+      "id": 7,
+      "status": "APPROVED",
+      "title": "Jennie come back",
+      "subtitle": "and stay with me",
+      "author": "chichu",
+      "category": "THOUGHTS",
+      "date": "08/09/2018",
+      "body": "Should have noticed it sooner. Should have been there when you needed me the most. But now that you're gone, can't do anything but to remember. All of the moments we shared together. All of the sleepovers we had. I wish we can have that again. But i guess it's too late. Too late to say I love you.",
       "draft": false
     },
     {
       "id": 8,
       "status": "PENDING",
-      "title": "A snake",
+      "title": "I miss you",
       "subtitle": "",
-      "author": "ddeulgi",
-      "category": "RANT",
-      "date": "08/02/2018",
-      "body": "@mandeuk stop your ass from snaking my girlfriend challenge : failed. \n\n@baechu stop entertainng Jennie Kim because you already have a girlfriend challenge : failed\n\n@chichi stop being whipped for me im not your daddy challenge : failed",
+      "author": "mandeuk",
+      "category": "THOUGHTS",
+      "date": "08/09/2018",
+      "body": "Cant do anything but to blame myself. Fell in love with the wrong person. In the wrong place. In the wrong time.",
       "draft": false
     }
   ]

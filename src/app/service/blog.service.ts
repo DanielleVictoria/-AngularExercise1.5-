@@ -15,7 +15,7 @@ import { Post } from 'src/app/models/Post';
 @Injectable()
 export class BlogService {
 
-  testing: boolean = true;
+  testing: boolean = false;
 
   // shared datas
   currentUser: User;

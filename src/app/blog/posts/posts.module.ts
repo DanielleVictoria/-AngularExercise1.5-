@@ -12,6 +12,8 @@ import { ShowPostsComponent } from './containers/show-posts.component';
 import { PostPaneComponent } from './dumbcomponents/post-pane.component';
 import { EditPostComponent } from './containers/edit-post.component';
 import { PostFormComponent } from './dumbcomponents/post-form.component';
+import { ViewPostComponent } from './containers/view-post.component';
+import { AddPostComponent } from './containers/add-post.component';
 
 @NgModule({
   imports: [
@@ -30,6 +32,8 @@ import { PostFormComponent } from './dumbcomponents/post-form.component';
     PostPaneComponent,
     EditPostComponent,
     PostFormComponent,
+    ViewPostComponent,
+    AddPostComponent,
   ],
   exports: [
     PostsComponent

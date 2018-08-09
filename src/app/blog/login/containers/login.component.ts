@@ -30,7 +30,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     if (this.blogservice.testing) {
-      this.router.navigate(['/dashboard']);
+      //this.router.navigate(['dashboard', {outlets: {'sub-outlet-1': ['posts']}}]);
+      this.router.navigate(['dashboard']);
     }
     this.tempOutlet = this.route.snapshot.paramMap.get('type');
     this.status = LOGIN_STATUS.LOGIN_NULL;
@@ -44,7 +45,7 @@ export class LoginComponent implements OnInit {
       if (user.username === username && user.password === password) {
         this.status = LOGIN_STATUS.LOGIN_SUCCESS;
         this.blogservice.currentUser = user;
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['dashboard']);
       } else if (user.username === username && user.password !== password) {
         this.status = LOGIN_STATUS.LOGIN_WRONG_PASSWORD;
         return;

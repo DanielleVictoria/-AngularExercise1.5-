@@ -1,3 +1,4 @@
+
 <!--                          ALERT                            -->
 
 <div class="alert alert-danger alert-dismissible" role="alert" *ngIf='isWrong'>
@@ -32,7 +33,8 @@
                 <label class="col-md-offset-2 col-md-1 control-label">Password</label>
 
                 <div class="col-md-7">
-                    <input type="password" name="password" required #password='ngModel' [(ngModel)]='modelUser.password' class="form-control" placeholder="Password">
+                    <input type="password" name="password" required #password='ngModel' [(ngModel)]='modelUser.password' class="form-control"
+                        placeholder="Password">
                 </div>
 
                 <div *ngIf="password.errors?.required && password.dirty">

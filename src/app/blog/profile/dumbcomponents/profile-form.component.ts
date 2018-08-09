@@ -23,6 +23,9 @@ export class ProfileFormComponent implements OnInit {
 
   }
 
+  ngOnChanges () {
+  }
+
   toggleEditing() {
     this.isEditing = !this.isEditing;
     console.log(this.isEditing);
@@ -45,7 +48,10 @@ export class ProfileFormComponent implements OnInit {
       // ADD interests HERE
     }
 
+    console.log (_date);
+
     this.editUserEmitter.emit(newuser);
+    this.toggleEditing ();
   }
 
 }

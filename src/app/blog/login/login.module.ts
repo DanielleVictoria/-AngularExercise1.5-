@@ -8,6 +8,8 @@ import { LoginComponent } from './containers/login.component';
 import { LoginFormComponent } from './dumbcomponents/login-form.component';
 import { ForgotPasswordFormComponent } from './dumbcomponents/forgot-password-form.component';
 
+import { CarouselModule } from 'ngx-bootstrap';
+
 const routes: Routes = [
 
 ];
@@ -17,6 +19,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     RouterModule.forChild (routes),
+
+    CarouselModule.forRoot(),
   ],
   declarations: [
     //smart

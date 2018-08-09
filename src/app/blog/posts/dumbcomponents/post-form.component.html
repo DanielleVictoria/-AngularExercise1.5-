@@ -1,34 +1,31 @@
+<div *ngIf='type == typeEDIT'>
+  <button class="btn btn-default" (click)='handleDeletePost()'>
+    Delete
+  </button>
+</div>
+
 <div class="panel panel-default">
 
-  <div *ngIf='type == typeEDIT'>
-    <button (click)='handleDeletePost()'>
-      <span class="glyphicon glyphicon-remove icon"></span>
-    </button>
+  <div class="panel-heading">
+    <h1 class="panel-title">
+      <div *ngIf='type == typeEDIT; else titleADD'>
+        <b>Edit a Post</b>
+      </div>
+      <ng-template #titleADD>
+        <b>Add a Post</b>
+      </ng-template>
+    </h1>
   </div>
 
-  <form class="form-horizontal" (ngSubmit)="handleSubmit()"
-    #form="ngForm" novalidate>
-
-    <div class="panel-heading">
-      <h1 class="panel-title">
-        <div *ngIf='type == typeEDIT; else titleADD'>
-          <b>Edit a Post</b>
-        </div>
-        <ng-template #titleADD>
-          <b>Add a Post</b>
-        </ng-template>
-      </h1>
-    </div>
-
-    <div class="panel-body">
-
+  <div class="panel-body">
+    <form class="form-horizontal" (ngSubmit)="handleSubmit()" #form="ngForm" novalidate>
       <div class="form-group col-md-6">
         <div>
           <label class="control-label">Category</label>
         </div>
 
         <div>
-          <select name="category" class="form-control" #category='ngModel' [(ngModel)]= 'myModel.category'>
+          <select name="category" class="form-control" #category='ngModel' [(ngModel)]='myModel.category'>
             <option>FLUFF</option>
             <option>RANT</option>
             <option>NEUTRAL</option>
@@ -43,7 +40,7 @@
         </div>
 
         <div>
-          <select name='publish' class="form-control" #publish='ngModel' [(ngModel)]= 'myModel.publish'>
+          <select name='publish' class="form-control" #publish='ngModel' [(ngModel)]='myModel.publish'>
             <option>PUBLISH</option>
             <option>DRAFT</option>
           </select>
@@ -54,7 +51,7 @@
         <label class="control-label">Title</label>
 
         <div>
-          <input type="text" name="title" required #title="ngModel" [ngModel]="myModel.title" class="form-control" placeholder="Title">
+          <input type="text" name="title" required #title="ngModel" [(ngModel)]="myModel.title" class="form-control" placeholder="Title">
         </div>
 
         <div *ngIf="title.errors?.required && title.dirty">
@@ -66,13 +63,13 @@
         <label class="control-label">Subtitle</label>
 
         <div>
-          <input type="text" name="subtitle" #subtitle="ngModel" [ngModel]="myModel.subtitle" class="form-control" placeholder="Subtitle">
+          <input type="text" name="subtitle" #subtitle="ngModel" [(ngModel)]="myModel.subtitle" class="form-control" placeholder="Subtitle">
         </div>
       </div>
 
       <div class="form-group col-md-12">
         <label class="control-label">Body</label>
-        <textarea class="form-control" rows="12" minlength="100" id="comment" name="body" required #body="ngModel" [ngModel]="myModel.body"></textarea>
+        <textarea class="form-control" rows="12" minlength="100" id="comment" name="body" required #body="ngModel" [(ngModel)]="myModel.body"></textarea>
       </div>
 
       <div class="form-group col-md-12">
@@ -92,7 +89,6 @@
           <button type="submit" class="btn btn-default col-md-offset-4 col-md-4" [disabled]="form.invalid">Post</button>
         </div>
       </div>
-
-    </div>
-  </form>
+    </form>
+  </div>
 </div>

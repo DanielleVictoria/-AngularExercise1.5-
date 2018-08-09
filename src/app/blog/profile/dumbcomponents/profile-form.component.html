@@ -1,5 +1,7 @@
 <div class='col-md-offset-1 col-md-10'>
   <div *ngIf='!isEditing; else edit'>
+
+    <!--                        SHOW PROFILE                          -->
     <div class="panel panel-default">
 
       <div class="panel-heading">
@@ -33,12 +35,13 @@
     </div>
   </div>
 
+  <!--                        EDIT PROFILE                          -->
   <ng-template #edit>
     <form class="form-horizontal" (ngSubmit)="handleSubmit(username.value, firstname.value, middlename.value, lastname.value, email.value, date.value)"
       #editForm="ngForm" novalidate>
 
-      <div class="panel panel-default">
 
+      <div class="panel panel-default">
         <div class="panel-heading">
           <h1 class="panel-title">
             <b>Edit Profile</b>
@@ -51,11 +54,9 @@
             <div>
               <label class="control-label">Username</label>
             </div>
-
             <div>
               <input type="text" name="username" required #username="ngModel" [ngModel]="user.username" class="form-control" placeholder="Username">
             </div>
-
             <div *ngIf="username.errors?.required && username.dirty">
               Username is required
             </div>
@@ -65,11 +66,9 @@
             <div>
               <label class="control-label">First Name</label>
             </div>
-
             <div>
               <input type="text" name="firstname" required #firstname="ngModel" [ngModel]="user.firstname" class="form-control" placeholder="First Name">
             </div>
-
             <div *ngIf="firstname.errors?.required && firstname.dirty">
               First Name is required
             </div>
@@ -79,11 +78,9 @@
             <div>
               <label class="control-label">Middle Name</label>
             </div>
-
             <div>
               <input type="text" name="middlename" required #middlename="ngModel" [ngModel]="user.middlename" class="form-control" placeholder="Middle Name">
             </div>
-
             <div *ngIf="middlename.errors?.required && middlename.dirty">
               Middle Name is required
             </div>
@@ -93,11 +90,9 @@
             <div>
               <label class="control-label">Last Name</label>
             </div>
-
             <div>
               <input type="text" name="lastname" required #lastname="ngModel" [ngModel]="user.lastname" class="form-control" placeholder="Last Name">
             </div>
-
             <div *ngIf="lastname.errors?.required && lastname.dirty">
               Last Name is required
             </div>
@@ -107,11 +102,9 @@
             <div>
               <label class="control-label">Email</label>
             </div>
-
             <div>
               <input type="text" name="email" required #email="ngModel" [ngModel]="user.email" class="form-control" placeholder="Email">
             </div>
-
             <div *ngIf="email.errors?.required && email.dirty">
               Email is required
             </div>
@@ -119,26 +112,20 @@
 
           <!-- DATE PICKER -->
           <link rel="stylesheet" href="https://unpkg.com/ngx-bootstrap/datepicker/bs-datepicker.css">
-
           <div class="form-group col-md-6">
-
             <label class="control-label">Birthday</label>
-
             <div>
               <input type="text" name="date" class="form-control" #date='ngModel' [ngModel]="user.birthdate" bsDatepicker [bsValue]="bsValue"
                 placement="bottom" [bsConfig]="{ dateInputFormat: 'MM/DD/YYYY' }">
             </div>
           </div>
 
-
           <!--//////////////////          INTERESTS          /////////////////////-->
-
           <div class="form-group ">
             <div class='col-md-12'>
-              <button type="submit" class="btn btn-default" [disabled]="editForm.invalid" (click)="toggleEditing()">Edit</button>
+              <button type="submit" class="btn btn-default" [disabled]="editForm.invalid" >Edit</button>
             </div>
           </div>
-
         </div>
       </div>
     </form>

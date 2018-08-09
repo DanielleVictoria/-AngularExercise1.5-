@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit, OnChanges, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { BlogService } from 'src/app/service/blog.service';
@@ -9,7 +9,7 @@ import { Post } from 'src/app/models/Post';
   selector: 'app-show-posts',
   templateUrl: './show-posts.component.html',
 })
-export class ShowPostsComponent implements OnInit, OnChanges {
+export class ShowPostsComponent implements OnInit {
 
   postsToShow: Post[];
   type: string;
@@ -18,14 +18,61 @@ export class ShowPostsComponent implements OnInit, OnChanges {
     private route: ActivatedRoute,
     private blogservice: BlogService,
     private router: Router
-  ) { }
-
-  ngOnChanges () {
-    console.log ("Hello");
+  ) {
+    // detect changes in query params
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
   }
-  
+
   ngOnInit() {
-    console.log ("Hello");
+    console.log("OnInit");
+
+    this.determinePosts();
+  }
+
+  //region  ///////////////////////////////////////// --> SHOW CONFIGURATION
+  sortDate = '&&_sort=date&&_order=desc'; 
+
+  // get all approved stories and set to show
+  showApprovedPosts() {
+    this.blogservice.getPostby('?status=APPROVED&&draft=false' + this.sortDate).subscribe(posts => this.postsToShow = posts);
+  }
+
+  // get user's approved posts
+  showUserApprovedPosts() {
+    this.blogservice.getPostby('?status=APPROVED&&draft=false&&author=' + this.blogservice.currentUser.username + this.sortDate)
+      .subscribe(posts => this.postsToShow = posts);
+  }
+
+  // get all approved stories and set to show
+  showPendingPosts() {
+    this.blogservice.getPostby('?status=PENDING&&draft=false'+ this.sortDate).subscribe(posts => this.postsToShow = posts);
+  }
+
+  // get user's pending posts
+  showUserPendingPosts() {
+    this.blogservice.getPostby('?status=PENDING&&draft=false&&author=' + this.blogservice.currentUser.username + this.sortDate)
+      .subscribe(posts => this.postsToShow = posts);
+  }
+
+  // get all returned stories and set to show
+  showReturnedPosts() {
+    this.blogservice.getPostby('?status=RETURNED&&draft=false').subscribe(posts => this.postsToShow = posts);
+  }
+
+  // get user's returned posts
+  showUserReturnedPosts() {
+    this.blogservice.getPostby('?status=RETURNED&&draft=false&&author=' + this.blogservice.currentUser.username)
+      .subscribe(posts => this.postsToShow = posts);
+  }
+
+  // get user's returned posts
+  showUserDrafts() {
+    this.blogservice.getPostby('?draft=true&&author=' + this.blogservice.currentUser.username)
+      .subscribe(posts => this.postsToShow = posts);
+  }
+
+  determinePosts() {
+
     this.type = this.route.snapshot.paramMap.get('type');
 
     if (this.type == 'approvedall') {
@@ -57,48 +104,12 @@ export class ShowPostsComponent implements OnInit, OnChanges {
     if (date) { newpath = newpath.concat('date=' + date + '&&'); }
     if (author) { newpath = newpath.concat('author=' + author + '&&'); }
     if (category) { newpath = newpath.concat('category=' + category + '&&'); }
-    sort == 'Ascending' ? newpath = newpath.concat('asc') : newpath = newpath.concat('desc');
+    if (sort) {
+      newpath = newpath.concat('_sort=title&&_order=');
+      sort == 'Ascending' ? newpath = newpath.concat('asc') : newpath = newpath.concat('desc');
+    }
+    
     this.blogservice.getPostby(newpath).subscribe(posts => this.postsToShow = posts);
-  }
-
-  //region SHOW CONFIGURATION
-  // get all approved stories and set to show
-  showApprovedPosts() {
-    this.blogservice.getPostby('?status=APPROVED&&draft=false').subscribe(posts => this.postsToShow = posts);
-  }
-
-  // get user's approved posts
-  showUserApprovedPosts() {
-    this.blogservice.getPostby('?status=APPROVED&&draft=false&&author=' + this.blogservice.currentUser.username)
-      .subscribe(posts => this.postsToShow = posts);
-  }
-
-  // get all approved stories and set to show
-  showPendingPosts() {
-    this.blogservice.getPostby('?status=PENDING&&draft=false').subscribe(posts => this.postsToShow = posts);
-  }
-
-  // get user's pending posts
-  showUserPendingPosts() {
-    this.blogservice.getPostby('?status=PENDING&&draft=false&&author=' + this.blogservice.currentUser.username)
-      .subscribe(posts => this.postsToShow = posts);
-  }
-
-  // get all returned stories and set to show
-  showReturnedPosts() {
-    this.blogservice.getPostby('?status=RETURNED&&draft=false').subscribe(posts => this.postsToShow = posts);
-  }
-
-  // get user's returned posts
-  showUserReturnedPosts() {
-    this.blogservice.getPostby('?status=RETURNED&&draft=false&&author=' + this.blogservice.currentUser.username)
-      .subscribe(posts => this.postsToShow = posts);
-  }
-
-  // get user's returned posts
-  showUserDrafts() {
-    this.blogservice.getPostby('?draft=true&&author=' + this.blogservice.currentUser.username)
-      .subscribe(posts => this.postsToShow = posts);
   }
   //endregion
 
@@ -107,13 +118,21 @@ export class ShowPostsComponent implements OnInit, OnChanges {
     return author == this.blogservice.currentUser.username;
   }
 
-  deletePost(post: Post) {
-    this.blogservice.deletePost(post.id).subscribe();
+  // checks if an author of a post is the current user
+  isApprover : boolean = this.blogservice.currentUser.type == "APPROVER";
+
+  deletePost(id : number) {
+    this.blogservice.deletePost(id).subscribe();
+    this.router.navigate(['../../show','approvedall'], { relativeTo: this.route});
   }
 
   editPost(id: number) {
     //this.router.navigate(['../', {outlets: { 'sub-outlet-2' : ['edit', id] } } ], {relativeTo : this.route});
-    this.router.navigate(['../edit', id], { relativeTo: this.route });
+    this.router.navigate(['../../edit', id], { relativeTo: this.route });
+  }
+
+  viewPost(id: number) {
+    this.router.navigate(['../../view', id], { relativeTo: this.route });
   }
 
 }

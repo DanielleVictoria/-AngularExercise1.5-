@@ -1,0 +1,14 @@
+<div>
+  <button class="btn btn-default" (click)='approvePost()'>
+    <span class="glyphicon glyphicon-ok"></span> Approve
+  </button>
+  <button class="btn btn-default" (click)='returnPost()'>
+      <span class="glyphicon glyphicon-minus"></span> Return
+    </button>
+  <button class="btn btn-default" (click)='deletePost()'>
+    <span class="glyphicon glyphicon-remove icon"></span> Delete
+  </button>
+</div>
+<app-post-pane [post]='post'></app-post-pane>
+
+

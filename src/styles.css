@@ -1,5 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 .suboutlet1 {
-    padding-top: 60px;
+    padding-top: 30px;
 }
 
+.panel > .panel-heading {
+    background-color: rgb(82, 120, 155);
+    color: white;
+}
+
+.navbar-default {
+    background-color: rgb(253, 253, 253);
+}
+
+.look {
+    margin: 30px;
+}

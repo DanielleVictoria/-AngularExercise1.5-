@@ -2,16 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { FORM_TYPE } from 'src/app/models/Enums';
 import { Post } from 'src/app/models/Post';
 import { BlogService } from 'src/app/service/blog.service';
-import { Router, ActivatedRoute } from '@angular/router';
-
+import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-edit-post',
-  templateUrl: './edit-post.component.html',
+  selector: 'app-add-post',
+  templateUrl: './add-post.component.html',
 })
-export class EditPostComponent implements OnInit {
-
-  typeEDIT = FORM_TYPE.EDIT;
+export class AddPostComponent implements OnInit {
+  typeADD = FORM_TYPE.ADD;
 
   post: Post;
 
@@ -22,13 +21,7 @@ export class EditPostComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    let id = this.route.snapshot.paramMap.get('id');
-    let posts = this.blogservice.posts;
-    for (let post of posts) {
-      if (post.id.toString() == id) {
-        this.post = post;
-      }
-    }
+    
   }
 
   ngOnChanges() {
@@ -36,10 +29,11 @@ export class EditPostComponent implements OnInit {
   }
 
   handleResult({ category, publish, title, body, subtitle }) {
+    console.log ({ category, publish, title, body, subtitle });
     let date = this.getDateToday();
     let post: Post;
     post = {
-      id: this.post.id,
+      id: 0,
       status: publish == 'DRAFT' ? 'DRAFT' : 'PENDING',
       title : title,
       subtitle : subtitle,
@@ -49,8 +43,11 @@ export class EditPostComponent implements OnInit {
       body : body,
       draft: publish == 'DRAFT' ? true : false,
     }
-    this.blogservice.updatePost(post).subscribe(post => console.log(post));
-    this.router.navigate(['../../show','draftsuser'], { relativeTo: this.route });
+    this.blogservice.addPost (post).subscribe(post => {
+      console.log (post);
+    });
+
+    this.router.navigate(['../show','approvedall'], { relativeTo: this.route });
   }
 
   private getDateToday(): string {
@@ -60,10 +57,5 @@ export class EditPostComponent implements OnInit {
     let day = date.getDate() > 9 ? '' + date.getDate().toString() : '0' + date.getDate().toString();
 
     return monthString + "/" + day + "/" + date.getFullYear();
-  }
-
-  deletePost(post: Post) {
-    this.blogservice.deletePost(post.id).subscribe();
-    this.router.navigate(['../../show','approvedall'], { relativeTo: this.route });
   }
 }

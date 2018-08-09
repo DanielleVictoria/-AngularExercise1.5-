@@ -1,11 +1,11 @@
 export class Post {
     id : number;
-    status : string;
+    status : string;    // PENDING (WAITING FOR THE APPROVER) , APPROVED, RETURNED (FOR EDITING), DRAFT
     title : string;
     subtitle? : string;
-    author : string;    //AUTOMATED
+    author : string;    
     category : string;
-    date : string;      //AUTOMATED
+    date : string;    
     body : string;  
     draft : boolean;
 }

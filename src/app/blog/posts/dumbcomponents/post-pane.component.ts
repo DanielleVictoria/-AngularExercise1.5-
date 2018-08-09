@@ -11,29 +11,41 @@ import { User } from 'src/app/models/User';
 export class PostPaneComponent implements OnInit {
 
   @Input()
-  post : Post;
+  post: Post;
+
+  /*
+  @Input()
+  isCurrentUser: boolean = false;
 
   @Input()
-  isCurrentUser : boolean = false;
+  isApprover: boolean = false;
 
   @Output()
-  editEmitter : EventEmitter<number> = new EventEmitter<number>();
+  editEmitter: EventEmitter<number> = new EventEmitter<number>();
 
   @Output()
-  deleteEmitter : EventEmitter<Post> = new EventEmitter<Post>();
+  viewEmitter: EventEmitter<number> = new EventEmitter<number>();
 
+  @Output()
+  deleteEmitter: EventEmitter<Post> = new EventEmitter<Post>();
+  */
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  handleEditPost(){
-    this.editEmitter.emit (this.post.id);
+  /*
+  handleEditPost() {
+    this.editEmitter.emit(this.post.id);
   }
 
-  handleDeletePost(){
+  handleDeletePost() {
     this.deleteEmitter.emit(this.post);
   }
 
+  handleViewPost() {
+    this.viewEmitter.emit(this.post.id);
+  }
+  */
 }
