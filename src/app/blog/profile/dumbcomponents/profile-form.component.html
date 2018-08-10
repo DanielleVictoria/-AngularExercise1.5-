@@ -115,7 +115,7 @@
           <div class="form-group col-md-6">
             <label class="control-label">Birthday</label>
             <div>
-              <input type="text" name="date" class="form-control" #date='ngModel' [ngModel]="user.birthdate" bsDatepicker [bsValue]="bsValue"
+              <input type="text" name="date" class="form-control" #date [ngModel]="user.birthdate" bsDatepicker [bsValue]="bsValue"
                 placement="bottom" [bsConfig]="{ dateInputFormat: 'MM/DD/YYYY' }">
             </div>
           </div>

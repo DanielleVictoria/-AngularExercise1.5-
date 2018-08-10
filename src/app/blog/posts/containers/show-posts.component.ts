@@ -19,6 +19,7 @@ export class ShowPostsComponent implements OnInit {
     private blogservice: BlogService,
     private router: Router
   ) {
+
     // detect changes in query params
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
   }

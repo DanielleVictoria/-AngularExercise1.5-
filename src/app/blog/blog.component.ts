@@ -12,7 +12,6 @@ export class BlogComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.router.navigate (["/login/attempt"]);
   }
 
 }

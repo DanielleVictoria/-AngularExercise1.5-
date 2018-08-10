@@ -50,7 +50,7 @@ export class EditPostComponent implements OnInit {
       draft: publish == 'DRAFT' ? true : false,
     }
     this.blogservice.updatePost(post).subscribe(post => console.log(post));
-    this.router.navigate(['../../show','draftsuser'], { relativeTo: this.route });
+    this.router.navigate(['../../show','approvedall'], { relativeTo: this.route });
   }
 
   private getDateToday(): string {

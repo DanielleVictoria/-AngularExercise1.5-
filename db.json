@@ -85,11 +85,12 @@
     },
     {
       "id": 3,
-      "status": "APPROVED",
+      "status": "RETURNED",
       "title": "YG can choke",
+      "subtitle": "and is a snake",
       "author": "mandeuk",
       "category": "RANT",
-      "date": "08/03/2018",
+      "date": "08/10/2018",
       "body": "YG can choke. He doesn't value his artists. He doesn't promote them that much. He's wasting TALENT. The nerve of that guy!",
       "draft": false
     },
@@ -139,14 +140,25 @@
     },
     {
       "id": 8,
-      "status": "PENDING",
+      "status": "APPROVED",
       "title": "I miss you",
       "subtitle": "",
       "author": "mandeuk",
       "category": "THOUGHTS",
-      "date": "08/09/2018",
-      "body": "Cant do anything but to blame myself. Fell in love with the wrong person. In the wrong place. In the wrong time.",
+      "date": "08/10/2018",
+      "body": "Cant do anything but to blame myself. Fell in love with the wrong person. In the wrong place. In the wrong time!",
       "draft": false
+    },
+    {
+      "id": 9,
+      "status": "DRAFT",
+      "title": "Slug is a hot too",
+      "subtitle": "but of course the bae is the best",
+      "author": "mandeuk",
+      "category": "THOUGHTS",
+      "date": "08/10/2018",
+      "body": "I mean, look at that girl. How can be so soft as a teddy bear and at the end slay us all with her hotness?",
+      "draft": true
     }
   ]
 }

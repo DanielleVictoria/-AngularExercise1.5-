@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute  } from '@angular/router';
+import { ActivatedRoute, Router  } from '@angular/router';
 import { BlogService } from 'src/app/service/blog.service';
 import { Post } from 'src/app/models/Post';
 
@@ -13,6 +13,7 @@ export class ViewPostComponent implements OnInit {
 
   constructor(
     private route : ActivatedRoute,
+    private router : Router,
     private blogservice : BlogService
   ) { }
 
@@ -30,15 +31,18 @@ export class ViewPostComponent implements OnInit {
   approvePost () {
     this.post.status = 'APPROVED';
     this.updatePost ();
+    this.router.navigate(['../../show','approvedall'], { relativeTo: this.route });
   }
 
   returnPost () {
     this.post.status = 'RETURNED';
     this.updatePost ();
+    this.router.navigate(['../../show','approvedall'], { relativeTo: this.route });
   }
 
   deletePost () {
     this.blogservice.deletePost(this.post.id).subscribe();
+    this.router.navigate(['../../show','approvedall'], { relativeTo: this.route });
   }
 
   updatePost () {

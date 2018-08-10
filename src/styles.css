@@ -15,3 +15,7 @@
 .look {
     margin: 30px;
 }
+
+textarea {
+    resize: vertical;
+}
